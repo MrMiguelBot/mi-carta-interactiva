@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Feliz Cumpleaños, Mi Ohana! 🌺</title>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <style>
+        :root {
+            --stitch-blue: #00a8ff;
+            --stitch-dark: #00457c;
+            --hibiscus-pink: #ff4d6d;
+            --sand: #fefae0;
+        }
+
+        body {
+            margin: 0;
+            background: linear-gradient(180deg, #81ecec 0%, #fab1a0 100%);
+            font-family: 'Quicksand', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 400px;
+            background: white;
+            border-radius: 30px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            border: 5px solid var(--stitch-blue);
+            position: relative;
+        }
+
+        .stitch-img {
+            width: 150px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        h1 {
+            font-family: 'Luckiest Guy', cursive;
+            color: var(--stitch-dark);
+            font-size: 2.2rem;
+            margin: 10px 0;
+        }
+
+        p {
+            color: #2d3436;
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        .ohana-quote {
+            background: #e1f5fe;
+            padding: 10px;
+            border-radius: 15px;
+            font-style: italic;
+            color: var(--stitch-dark);
+            margin: 20px 0;
+        }
+
+        .btn-abrir {
+            background: var(--hibiscus-pink);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4);
+            transition: 0.3s;
+            width: 100%;
+        }
+
+        .btn-abrir:active {
+            transform: scale(0.95);
+        }
+
+        .hidden-msg {
+            display: none;
+            margin-top: 20px;
+            animation: fadeIn 1s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <img src="https://i.ibb.co/jvzMm609/1772675778507.png" alt="YouAndMe" border="0"></a>"
+
+    
+    <h1>¡Feliz Cumple! 🎂</h1>
+    <p>Hoy celebramos a la persona más especial de mi galaxia.</p>
+    
+    <div class="ohana-quote">
+        "Ohana significa familia, y familia que estemos juntos para siempre." 🌺
+    </div>
+
+    <button class="btn-abrir" onclick="celebrar()">¡Tócame para tu sorpresa!</button>
+
+    <div id="mensaje" class="hidden-msg">
+        <p>Eres mi experimento favorito y te amo más que a las de chocolate. ¡Espero que tu día sea mágico!</p>
+        <hr style="border: 1px dashed var(--stitch-blue)">
+        <p>✨ <b>¡Te amo, cumpleañera!</b> ✨</p>
+    </div>
+</div>
+
+<script>
+    function celebrar() {
+        // Lanzar confeti
+        confetti({
+            particleCount: 150,
+            spread: 70,
+            origin: { y: 0.6 },
+            colors: ['#00a8ff', '#ff4d6d', '#fefae0']
+        });
+
+        // Mostrar mensaje oculto
+        document.getElementById('mensaje').style.display = 'block';
+        
+        // Hacer vibrar el botón y luego desaparecerlo si quieres
+        document.querySelector('.btn-abrir').innerText = "¡FELICIDADES! 🥳";
+    }
+</script>
+
+</body>
+</html>
